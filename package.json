@@ -1,0 +1,89 @@
+{
+  "name": "n8n-nodes-alloy",
+  "version": "1.0.0",
+  "description": "A comprehensive n8n community node for Alloy compliance orchestration platform providing 23 resources and 200+ operations for KYC, KYB, identity verification, document verification, watchlist screening, risk assessment, and compliance workflow automation.",
+  "license": "BUSL-1.1",
+  "author": {
+    "name": "Velocity BPA",
+    "email": "licensing@velobpa.com",
+    "url": "https://velobpa.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Velocity-BPA/n8n-nodes-alloy.git"
+  },
+  "homepage": "https://github.com/Velocity-BPA/n8n-nodes-alloy#readme",
+  "bugs": {
+    "url": "https://github.com/Velocity-BPA/n8n-nodes-alloy/issues"
+  },
+  "keywords": [
+    "n8n",
+    "n8n-community-node-package",
+    "alloy",
+    "compliance",
+    "kyc",
+    "kyb",
+    "identity-verification",
+    "document-verification",
+    "watchlist-screening",
+    "risk-assessment",
+    "aml",
+    "fraud-detection",
+    "onboarding",
+    "fintech",
+    "regtech"
+  ],
+  "main": "dist/nodes/Alloy/Alloy.node.js",
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/AlloyApi.credentials.js",
+      "dist/credentials/AlloyJourney.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Alloy/Alloy.node.js",
+      "dist/nodes/Alloy/AlloyTrigger.node.js"
+    ]
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc && gulp build:icons",
+    "dev": "tsc --watch",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "format": "prettier --write \"**/*.ts\"",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "clean": "rimraf dist",
+    "prebuild": "npm run clean",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "axios": "^1.6.2",
+    "form-data": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/jest": "^29.5.11",
+    "@types/node": "^20.10.5",
+    "eslint": "^8.56.0",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "gulp": "^4.0.2",
+    "jest": "^29.7.0",
+    "n8n-workflow": "^1.22.0",
+    "prettier": "^3.1.1",
+    "rimraf": "^5.0.5",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "n8n-workflow": ">=1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
